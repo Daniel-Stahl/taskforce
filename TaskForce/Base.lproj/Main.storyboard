@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LhM-xg-Ao7">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Heavy</string>
+            <string>AvenirNext-Medium</string>
+            <string>AvenirNext-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Create TaskVC-->
+        <scene sceneID="zqF-Lt-f6n">
+            <objects>
+                <viewController storyboardIdentifier="CreateTaskVC" id="nBr-D6-a3x" customClass="CreateTaskVC" customModule="TaskForce" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RZS-w1-6s2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="L9p-Rj-YUo">
+                                <rect key="frame" x="20" y="728" width="335" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hto-kn-k2D">
+                                        <rect key="frame" x="0.0" y="0.0" width="152.66666666666666" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="JkL-d5-3Mj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
+                                        <state key="normal" title="Add Task">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addTaskButtonPressed:" destination="nBr-D6-a3x" eventType="touchUpInside" id="z46-jg-jNL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brT-dz-xqc">
+                                        <rect key="frame" x="182.66666666666663" y="0.0" width="152.33333333333337" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="YfY-1c-s76"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
+                                        <state key="normal" title="Add Note">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addNoteButtonPressed:" destination="nBr-D6-a3x" eventType="touchUpInside" id="wVp-g0-CWE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tap to add a task" translatesAutoresizingMaskIntoConstraints="NO" id="7iY-sC-YS4">
+                                <rect key="frame" x="20" y="94" width="335" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="d5p-Gf-o4E"/>
+                                </constraints>
+                                <color key="textColor" red="0.0" green="0.058823529409999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="28"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="heC-xn-0Pn" firstAttribute="bottom" secondItem="L9p-Rj-YUo" secondAttribute="bottom" id="9we-mp-NuT"/>
+                            <constraint firstItem="heC-xn-0Pn" firstAttribute="trailing" secondItem="L9p-Rj-YUo" secondAttribute="trailing" constant="20" id="SK1-ju-8xu"/>
+                            <constraint firstItem="7iY-sC-YS4" firstAttribute="top" secondItem="heC-xn-0Pn" secondAttribute="top" constant="50" id="THg-6q-dPr"/>
+                            <constraint firstItem="L9p-Rj-YUo" firstAttribute="leading" secondItem="heC-xn-0Pn" secondAttribute="leading" constant="20" id="WsW-7i-EVa"/>
+                            <constraint firstItem="7iY-sC-YS4" firstAttribute="leading" secondItem="heC-xn-0Pn" secondAttribute="leading" constant="20" id="ubJ-C6-cly"/>
+                            <constraint firstItem="heC-xn-0Pn" firstAttribute="trailing" secondItem="7iY-sC-YS4" secondAttribute="trailing" constant="20" id="yXh-hy-cBV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="heC-xn-0Pn"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonStack" destination="L9p-Rj-YUo" id="KsK-c3-Ns9"/>
+                        <outlet property="taskTextView" destination="7iY-sC-YS4" id="fvn-Rp-zFx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iMa-pU-LU8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="949.60000000000002" y="131.52709359605913"/>
+        </scene>
+        <!--Finish TaskVC-->
+        <scene sceneID="vKd-2C-Ou1">
+            <objects>
+                <viewController storyboardIdentifier="FinishTaskVC" id="Jra-rx-srq" customClass="FinishTaskVC" customModule="TaskForce" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eN7-Y9-EPr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tap to add a note" translatesAutoresizingMaskIntoConstraints="NO" id="Vfs-K1-vgK">
+                                <rect key="frame" x="20" y="94" width="335" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="hTL-OD-aRh"/>
+                                </constraints>
+                                <color key="textColor" red="0.0" green="0.058823529409999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="28"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52d-Gd-ChD">
+                                <rect key="frame" x="20" y="728" width="335" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="GZ2-lo-LgP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="28"/>
+                                <state key="normal" title="Add Task">
+                                    <color key="titleColor" red="0.0" green="0.058823529409999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addTaskButtonPressed:" destination="Jra-rx-srq" eventType="touchUpInside" id="8hp-3m-sbA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xjS-KC-beQ" firstAttribute="trailing" secondItem="Vfs-K1-vgK" secondAttribute="trailing" constant="20" id="1ow-l4-fY5"/>
+                            <constraint firstItem="52d-Gd-ChD" firstAttribute="leading" secondItem="xjS-KC-beQ" secondAttribute="leading" constant="20" id="4Lk-Tq-UqF"/>
+                            <constraint firstItem="xjS-KC-beQ" firstAttribute="trailing" secondItem="52d-Gd-ChD" secondAttribute="trailing" constant="20" id="Lna-NS-4X3"/>
+                            <constraint firstItem="Vfs-K1-vgK" firstAttribute="leading" secondItem="xjS-KC-beQ" secondAttribute="leading" constant="20" id="SAt-Le-ks1"/>
+                            <constraint firstItem="xjS-KC-beQ" firstAttribute="bottom" secondItem="52d-Gd-ChD" secondAttribute="bottom" id="YAG-1P-US8"/>
+                            <constraint firstItem="Vfs-K1-vgK" firstAttribute="top" secondItem="xjS-KC-beQ" secondAttribute="top" constant="50" id="Yn7-ER-j8Z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xjS-KC-beQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="addTaskButton" destination="52d-Gd-ChD" id="FcQ-VT-WT3"/>
+                        <outlet property="noteTextView" destination="Vfs-K1-vgK" id="qfi-AR-SjT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AyS-Q6-ucY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1761" y="131"/>
+        </scene>
+        <!--TaskVC-->
+        <scene sceneID="tdM-x6-IVW">
+            <objects>
+                <viewController storyboardIdentifier="TaskVC" id="LhM-xg-Ao7" customClass="TaskVC" customModule="TaskForce" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q8F-GN-Fyp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="diR-Hj-k1Y">
+                                <rect key="frame" x="0.0" y="238" width="375" height="540"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="540" id="hiB-Yn-W5o"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="28"/>
+                                <inset key="titleEdgeInsets" minX="20" minY="36" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Tap to add a task">
+                                    <color key="titleColor" red="0.86274509799999999" green="0.85882352939999995" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addTaskButton:" destination="LhM-xg-Ao7" eventType="touchUpInside" id="fV9-W0-iFk"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" pagingEnabled="YES" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VHb-7t-Eq1">
+                                <rect key="frame" x="18" y="94" width="339" height="125"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="h56-Q9-uPI"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="nlu-RS-2KN">
+                                    <size key="itemSize" width="338" height="125"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="taskCell" id="Tdl-jH-5bt" customClass="TaskCell" customModule="TaskForce" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="338" height="125"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="338" height="125"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yard Work" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="nuf-6v-q42">
+                                                    <rect key="frame" x="8" y="8" width="322.66666666666669" height="38.666666666666664"/>
+                                                    <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="28"/>
+                                                    <color key="textColor" red="0.0" green="0.058823529409999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <size key="shadowOffset" width="0.0" height="0.0"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDH-di-q0E">
+                                                    <rect key="frame" x="8" y="46.666666666666664" width="322.66666666666669" height="70.333333333333343"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <color key="textColor" red="0.0" green="0.058823529409999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes"/>
+                                                </textView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="cDH-di-q0E" firstAttribute="leading" secondItem="Tdl-jH-5bt" secondAttribute="leading" constant="8" id="IqP-ja-jgc"/>
+                                            <constraint firstItem="cDH-di-q0E" firstAttribute="top" secondItem="nuf-6v-q42" secondAttribute="bottom" id="Sv4-GJ-lAV"/>
+                                            <constraint firstAttribute="bottom" secondItem="cDH-di-q0E" secondAttribute="bottom" constant="8" id="Xfl-fb-4zC"/>
+                                            <constraint firstItem="nuf-6v-q42" firstAttribute="leading" secondItem="Tdl-jH-5bt" secondAttribute="leading" constant="8" id="XgY-KQ-QMP"/>
+                                            <constraint firstItem="nuf-6v-q42" firstAttribute="top" secondItem="Tdl-jH-5bt" secondAttribute="top" constant="8" id="clO-kv-dMj"/>
+                                            <constraint firstAttribute="trailing" secondItem="nuf-6v-q42" secondAttribute="trailing" constant="8" id="iYV-8u-LDV"/>
+                                            <constraint firstAttribute="trailing" secondItem="cDH-di-q0E" secondAttribute="trailing" constant="8" id="ocJ-wV-Jck"/>
+                                        </constraints>
+                                        <size key="customSize" width="338" height="125"/>
+                                        <connections>
+                                            <outlet property="taskNote" destination="cDH-di-q0E" id="HmM-as-JFr"/>
+                                            <outlet property="taskTitle" destination="nuf-6v-q42" id="6mj-2w-CeZ"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KYh-Cc-dVV">
+                                <rect key="frame" x="16" y="227" width="343" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.16078431369999999" green="0.16862745100000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="VHb-7t-Eq1" firstAttribute="leading" secondItem="956-Ia-3nI" secondAttribute="leading" constant="18" id="7Dg-6g-vYz"/>
+                            <constraint firstItem="diR-Hj-k1Y" firstAttribute="trailing" secondItem="956-Ia-3nI" secondAttribute="trailing" id="DQG-FD-yvz"/>
+                            <constraint firstItem="diR-Hj-k1Y" firstAttribute="bottom" secondItem="956-Ia-3nI" secondAttribute="bottom" id="b1K-2g-ua0"/>
+                            <constraint firstItem="diR-Hj-k1Y" firstAttribute="leading" secondItem="956-Ia-3nI" secondAttribute="leading" id="kML-cY-RIL"/>
+                            <constraint firstItem="956-Ia-3nI" firstAttribute="trailing" secondItem="VHb-7t-Eq1" secondAttribute="trailing" constant="18" id="sAe-P1-jgR"/>
+                            <constraint firstItem="VHb-7t-Eq1" firstAttribute="top" secondItem="956-Ia-3nI" secondAttribute="top" constant="50" id="t0F-fn-iVg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="956-Ia-3nI"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="VHb-7t-Eq1" id="GsF-jO-STl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1bx-N8-zSk" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="77.599999999999994" y="130.78817733990149"/>
+        </scene>
+        <!--PopVC-->
+        <scene sceneID="nqJ-zB-qoL">
+            <objects>
+                <viewController storyboardIdentifier="PopVC" id="MXi-CC-rH3" customClass="PopVC" customModule="TaskForce" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VXp-rD-uBe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Title" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sXR-av-ADL">
+                                <rect key="frame" x="20" y="94" width="335" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="laZ-a6-gbb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="28"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JxB-Ta-9jE">
+                                <rect key="frame" x="20" y="204" width="335" height="290"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="290" id="oD2-hM-Jjm"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ebz-aa-k8M">
+                                <rect key="frame" x="0.0" y="708" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="XUi-oa-owh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="16"/>
+                                <state key="normal" title="COMPLETE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="completeTaskButtonPressed:" destination="MXi-CC-rH3" eventType="touchUpInside" id="Jts-vb-7dj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sXR-av-ADL" firstAttribute="leading" secondItem="7g8-4P-VeB" secondAttribute="leading" constant="20" id="130-CH-rSC"/>
+                            <constraint firstItem="JxB-Ta-9jE" firstAttribute="leading" secondItem="7g8-4P-VeB" secondAttribute="leading" constant="20" id="18q-GN-ymf"/>
+                            <constraint firstItem="Ebz-aa-k8M" firstAttribute="leading" secondItem="7g8-4P-VeB" secondAttribute="leading" id="1D1-IW-QdR"/>
+                            <constraint firstItem="7g8-4P-VeB" firstAttribute="trailing" secondItem="Ebz-aa-k8M" secondAttribute="trailing" id="JGf-ze-YDr"/>
+                            <constraint firstItem="7g8-4P-VeB" firstAttribute="trailing" secondItem="JxB-Ta-9jE" secondAttribute="trailing" constant="20" id="OoX-oj-6Da"/>
+                            <constraint firstItem="sXR-av-ADL" firstAttribute="top" secondItem="7g8-4P-VeB" secondAttribute="top" constant="50" id="TRP-8B-czX"/>
+                            <constraint firstItem="7g8-4P-VeB" firstAttribute="bottom" secondItem="Ebz-aa-k8M" secondAttribute="bottom" constant="20" id="UoC-ZC-yvY"/>
+                            <constraint firstItem="7g8-4P-VeB" firstAttribute="trailing" secondItem="sXR-av-ADL" secondAttribute="trailing" constant="20" id="cl5-QA-uR5"/>
+                            <constraint firstItem="JxB-Ta-9jE" firstAttribute="top" secondItem="sXR-av-ADL" secondAttribute="bottom" constant="10" id="ycx-JQ-bxP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7g8-4P-VeB"/>
+                    </view>
+                    <connections>
+                        <outlet property="taskNote" destination="JxB-Ta-9jE" id="lcQ-5N-FrI"/>
+                        <outlet property="taskTitle" destination="sXR-av-ADL" id="bEw-Rz-I2n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="65f-OR-4HI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="84" y="832.75862068965523"/>
+        </scene>
+    </scenes>
+</document>
