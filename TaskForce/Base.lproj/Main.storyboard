@@ -322,9 +322,6 @@
                                 <state key="normal" title="COMPLETE">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="completeTaskButtonPressed:" destination="MXi-CC-rH3" eventType="touchUpInside" id="Jts-vb-7dj"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -342,6 +339,7 @@
                         <viewLayoutGuide key="safeArea" id="7g8-4P-VeB"/>
                     </view>
                     <connections>
+                        <outlet property="completeButton" destination="Ebz-aa-k8M" id="aam-Cc-2JL"/>
                         <outlet property="taskNote" destination="JxB-Ta-9jE" id="lcQ-5N-FrI"/>
                         <outlet property="taskTitle" destination="sXR-av-ADL" id="bEw-Rz-I2n"/>
                     </connections>
