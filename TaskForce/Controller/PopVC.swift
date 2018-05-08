@@ -11,26 +11,44 @@ import CoreData
 
 class PopVC: UIViewController, UIGestureRecognizerDelegate {
 
-    @IBOutlet weak var taskTitle: UITextView!
+    
+    @IBOutlet weak var taskTitle: UILabel!
     @IBOutlet weak var taskNote: UITextView!
     @IBOutlet weak var completeButton: UIButton!
+    @IBOutlet weak var progressBar: ProgressBarView!
     
     var passedTitle: String = ""
     var passedNote: String = ""
+    var passedRow: Int = 0
     
     var tasks: [Task] = []
     
-    func initData(title: String, note: String) {
+    var progressCounter: Float = 0
+    let duration: Float = 3
+    var progressIncrement: Float = 0
+    var timer: Timer!
+
+    func initData(title: String, note: String, row: Int) {
         self.passedTitle = title
         self.passedNote = note
+        self.passedRow = row
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchTask()
         taskTitle.text = passedTitle
         taskNote.text = passedNote
         swipeToClose()
         longPressDeleteTask()
+        progressIncrement = 1.0/duration
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.showProgress), userInfo: nil, repeats: true)
+    }
+    
+    @objc func showProgress() {
+        
+            progressBar.progress = progressCounter
+            progressCounter = progressCounter + progressIncrement
     }
     
     func swipeToClose() {
@@ -43,6 +61,17 @@ class PopVC: UIViewController, UIGestureRecognizerDelegate {
         dismissDetail()
     }
     
+    @IBAction func buttonHeldDown(_ sender: Any) {
+        self.progressBar.isHidden = false
+        timer.fire()
+    }
+    
+    @IBAction func buttonCancled(_ sender: Any) {
+        self.progressBar.isHidden = true
+        timer.invalidate()
+    }
+    
+    
     func longPressDeleteTask() {
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(deleteTask(press:)))
         longPress.minimumPressDuration = 3.0
@@ -50,10 +79,21 @@ class PopVC: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @objc func deleteTask(press: UILongPressGestureRecognizer) {
-        self.fetch { (success) in
-            if success {
-                print(tasks)
-            }
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
+        managedContext.delete(tasks[passedRow])
+        do {
+            try managedContext.save()
+            print("successfully removed goal")
+        } catch {
+            debugPrint("Could not remove: \(error.localizedDescription)")
+        }
+        
+        dismissDetail()
+    }
+    
+    func fetchTask() {
+        self.fetch { (true) in
+            
         }
     }
     
@@ -64,24 +104,11 @@ class PopVC: UIViewController, UIGestureRecognizerDelegate {
         
         do {
             tasks = try managedContext.fetch(fetchRequest)
-            print("fetched task")
+            print("tasks added to array")
             completion(true)
         } catch {
             debugPrint("Could not fetch: \(error.localizedDescription)")
             completion(false)
         }
     }
-    
-//    func removeGoal(atIndexPath indexPath: IndexPath) {
-//        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
-//
-//        managedContext.delete(tasks[indexPath.row])
-//
-//        do {
-//            try managedContext.save()
-//            print("successfully removed goal")
-//        } catch {
-//            debugPrint("Could not remove: \(error.localizedDescription)")
-//        }
-//    }
 }

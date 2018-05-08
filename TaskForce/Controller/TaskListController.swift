@@ -133,7 +133,7 @@ extension TaskListController: UIViewControllerPreviewingDelegate {
         
         let choosenTask = tasks[indexPath.row]
         
-        popVC.initData(title: choosenTask.taskTitle!, note: choosenTask.taskNotes!)
+        popVC.initData(title: choosenTask.taskTitle!, note: choosenTask.taskNotes!, row: indexPath.row)
         
         previewingContext.sourceRect = cell.contentView.frame
         return popVC

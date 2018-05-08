@@ -22,6 +22,7 @@
 		43C0471D2034D40F00D22200 /* FinishTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C0471C2034D40F00D22200 /* FinishTaskVC.swift */; };
 		43C047212034E19400D22200 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C047202034E19400D22200 /* UIViewControllerExt.swift */; };
 		43C0472520362A0300D22200 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C0472420362A0300D22200 /* TaskCell.swift */; };
+		43C3394120A25326008EAE58 /* progressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C3394020A25326008EAE58 /* progressBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		43C0471C2034D40F00D22200 /* FinishTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishTaskVC.swift; sourceTree = "<group>"; };
 		43C047202034E19400D22200 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		43C0472420362A0300D22200 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		43C3394020A25326008EAE58 /* progressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = progressBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			children = (
 				43C047122030E96C00D22200 /* cardShadow.swift */,
 				43C0472420362A0300D22200 /* TaskCell.swift */,
+				43C3394020A25326008EAE58 /* progressBarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				43C0471D2034D40F00D22200 /* FinishTaskVC.swift in Sources */,
 				43C0472520362A0300D22200 /* TaskCell.swift in Sources */,
 				43C047002030DEFB00D22200 /* TaskForce.xcdatamodeld in Sources */,
+				43C3394120A25326008EAE58 /* progressBarView.swift in Sources */,
 				4343C6A320894FBF0056E7E7 /* PopVC.swift in Sources */,
 				43C046F82030DEFB00D22200 /* AppDelegate.swift in Sources */,
 				43C0471620322C9700D22200 /* Constants.swift in Sources */,
