@@ -17,5 +17,4 @@ class TaskCell: UICollectionViewCell {
         self.taskTitle.text = task.taskTitle
         self.taskNote.text = task.taskNotes
     }
-    
 }
