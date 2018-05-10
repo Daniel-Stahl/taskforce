@@ -16,6 +16,8 @@ class FinishTaskVC: UIViewController, UITextViewDelegate {
     @IBOutlet weak var noteTextView: UITextView!
     @IBOutlet weak var addTaskButton: UIButton!
     
+    let toolBar = UIToolbar()
+    
     var taskTitle: String!
     
     func initData(task: String) {
@@ -26,7 +28,16 @@ class FinishTaskVC: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         addTaskButton.bindtoKeyboard()
         noteTextView.delegate = self
+        noteTextView.inputAccessoryView = toolBar
         
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(self.doneClicked))
+        
+        toolBar.setItems([doneButton], animated: false)
+        toolBar.sizeToFit()
+    }
+    
+    @objc func doneClicked() {
+        view.endEditing(true)
     }
 
     @IBAction func addTaskButtonPressed(_ sender: Any) {
@@ -42,7 +53,7 @@ class FinishTaskVC: UIViewController, UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         noteTextView.text = ""
     }
-    
+
     func save(completion: (_ finished: Bool) -> ()) {
         guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
         let task = Task(context: managedContext)

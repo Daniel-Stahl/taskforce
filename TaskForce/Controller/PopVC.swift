@@ -38,6 +38,7 @@ class PopVC: UIViewController, UIGestureRecognizerDelegate {
         swipeToClose()
         longPressDeleteTask()
         circleProgressBar()
+        
     }
     
     func swipeToClose() {
