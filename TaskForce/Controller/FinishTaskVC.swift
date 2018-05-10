@@ -59,5 +59,4 @@ class FinishTaskVC: UIViewController, UITextViewDelegate {
             completion(false)
         }
     }
-
 }

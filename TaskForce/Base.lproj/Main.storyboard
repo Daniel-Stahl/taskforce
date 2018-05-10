@@ -139,7 +139,7 @@
         <scene sceneID="CZP-ee-h10">
             <objects>
                 <collectionViewController id="N1e-pu-Mv9" customClass="TaskListController" customModule="TaskForce" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="Aed-pr-eXM">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="Aed-pr-eXM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="152"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -325,32 +325,23 @@
                                 <color key="textColor" red="0.0" green="0.058823529409999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view hidden="YES" alpha="0.45000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eb0-KH-LPT" customClass="ProgressBarView" customModule="TaskForce" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="375" height="664"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="JxB-Ta-9jE" firstAttribute="leading" secondItem="7g8-4P-VeB" secondAttribute="leading" constant="20" id="18q-GN-ymf"/>
                             <constraint firstItem="Ebz-aa-k8M" firstAttribute="leading" secondItem="7g8-4P-VeB" secondAttribute="leading" id="1D1-IW-QdR"/>
-                            <constraint firstItem="eb0-KH-LPT" firstAttribute="leading" secondItem="7g8-4P-VeB" secondAttribute="leading" id="4VH-1K-DM6"/>
                             <constraint firstItem="yXq-fg-Tj8" firstAttribute="leading" secondItem="7g8-4P-VeB" secondAttribute="leading" constant="20" id="7Xj-3W-a0a"/>
                             <constraint firstItem="7g8-4P-VeB" firstAttribute="trailing" secondItem="Ebz-aa-k8M" secondAttribute="trailing" id="JGf-ze-YDr"/>
                             <constraint firstItem="JxB-Ta-9jE" firstAttribute="top" secondItem="yXq-fg-Tj8" secondAttribute="bottom" constant="50" id="JxT-BT-RY5"/>
-                            <constraint firstItem="eb0-KH-LPT" firstAttribute="top" secondItem="7g8-4P-VeB" secondAttribute="top" id="NLP-nO-5vH"/>
                             <constraint firstItem="7g8-4P-VeB" firstAttribute="trailing" secondItem="JxB-Ta-9jE" secondAttribute="trailing" constant="20" id="OoX-oj-6Da"/>
                             <constraint firstItem="7g8-4P-VeB" firstAttribute="bottom" secondItem="Ebz-aa-k8M" secondAttribute="bottom" constant="20" id="UoC-ZC-yvY"/>
                             <constraint firstItem="7g8-4P-VeB" firstAttribute="trailing" secondItem="yXq-fg-Tj8" secondAttribute="trailing" constant="20" id="gtY-rS-WhB"/>
                             <constraint firstItem="yXq-fg-Tj8" firstAttribute="top" secondItem="7g8-4P-VeB" secondAttribute="top" constant="50" id="hA4-MV-pZJ"/>
-                            <constraint firstItem="Ebz-aa-k8M" firstAttribute="top" secondItem="eb0-KH-LPT" secondAttribute="bottom" id="j4Q-7r-HDC"/>
-                            <constraint firstItem="eb0-KH-LPT" firstAttribute="trailing" secondItem="7g8-4P-VeB" secondAttribute="trailing" id="qCa-sG-Xyi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7g8-4P-VeB"/>
                     </view>
                     <connections>
                         <outlet property="completeButton" destination="Ebz-aa-k8M" id="aam-Cc-2JL"/>
-                        <outlet property="progressBar" destination="eb0-KH-LPT" id="vhf-L3-qzS"/>
                         <outlet property="taskNote" destination="JxB-Ta-9jE" id="lcQ-5N-FrI"/>
                         <outlet property="taskTitle" destination="yXq-fg-Tj8" id="d6a-aB-Bdt"/>
                     </connections>

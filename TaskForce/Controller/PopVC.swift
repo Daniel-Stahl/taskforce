@@ -11,22 +11,18 @@ import CoreData
 
 class PopVC: UIViewController, UIGestureRecognizerDelegate {
 
+    let shapeLayer = CAShapeLayer()
+    let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
     
     @IBOutlet weak var taskTitle: UILabel!
     @IBOutlet weak var taskNote: UITextView!
     @IBOutlet weak var completeButton: UIButton!
-    @IBOutlet weak var progressBar: ProgressBarView!
     
     var passedTitle: String = ""
     var passedNote: String = ""
     var passedRow: Int = 0
     
     var tasks: [Task] = []
-    
-    var progressCounter: Float = 0
-    let duration: Float = 3
-    var progressIncrement: Float = 0
-    var timer: Timer!
 
     func initData(title: String, note: String, row: Int) {
         self.passedTitle = title
@@ -41,14 +37,7 @@ class PopVC: UIViewController, UIGestureRecognizerDelegate {
         taskNote.text = passedNote
         swipeToClose()
         longPressDeleteTask()
-        progressIncrement = 1.0/duration
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.showProgress), userInfo: nil, repeats: true)
-    }
-    
-    @objc func showProgress() {
-        
-            progressBar.progress = progressCounter
-            progressCounter = progressCounter + progressIncrement
+        circleProgressBar()
     }
     
     func swipeToClose() {
@@ -61,16 +50,28 @@ class PopVC: UIViewController, UIGestureRecognizerDelegate {
         dismissDetail()
     }
     
+    func circleProgressBar() {
+        let center = view.center
+        let circularPath = UIBezierPath(arcCenter: center, radius: 100, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
+        shapeLayer.path = circularPath.cgPath
+        shapeLayer.strokeColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
+        shapeLayer.lineWidth = 10
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.lineCap = kCALineCapRound
+        shapeLayer.strokeEnd = 0
+        view.layer.addSublayer(shapeLayer)
+    }
+    
     @IBAction func buttonHeldDown(_ sender: Any) {
-        self.progressBar.isHidden = false
-        timer.fire()
+        shapeLayer.isHidden = false
+        basicAnimation.toValue = 1
+        basicAnimation.duration = 3.7
+        shapeLayer.add(basicAnimation, forKey: "progressBar")
     }
     
     @IBAction func buttonCancled(_ sender: Any) {
-        self.progressBar.isHidden = true
-        timer.invalidate()
+        shapeLayer.isHidden = true
     }
-    
     
     func longPressDeleteTask() {
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(deleteTask(press:)))
