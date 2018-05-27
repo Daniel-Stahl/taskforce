@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LhM-xg-Ao7">
-    <device id="retina5_9" orientation="portrait">
+    <device id="ipad12_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,14 +15,14 @@
             <objects>
                 <viewController storyboardIdentifier="CreateTaskVC" id="nBr-D6-a3x" customClass="CreateTaskVC" customModule="TaskForce" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RZS-w1-6s2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="L9p-Rj-YUo">
-                                <rect key="frame" x="20" y="708" width="335" height="50"/>
+                                <rect key="frame" x="20" y="1296" width="984" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hto-kn-k2D">
-                                        <rect key="frame" x="0.0" y="0.0" width="152.66666666666666" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="477" height="50"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="JkL-d5-3Mj"/>
@@ -36,7 +36,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brT-dz-xqc">
-                                        <rect key="frame" x="182.66666666666663" y="0.0" width="152.33333333333337" height="50"/>
+                                        <rect key="frame" x="507" y="0.0" width="477" height="50"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="YfY-1c-s76"/>
@@ -52,7 +52,7 @@
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tap to add a task" translatesAutoresizingMaskIntoConstraints="NO" id="7iY-sC-YS4">
-                                <rect key="frame" x="20" y="94" width="335" height="150"/>
+                                <rect key="frame" x="20" y="70" width="984" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="d5p-Gf-o4E"/>
@@ -87,11 +87,11 @@
             <objects>
                 <viewController storyboardIdentifier="FinishTaskVC" id="Jra-rx-srq" customClass="FinishTaskVC" customModule="TaskForce" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eN7-Y9-EPr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tap to add a note" translatesAutoresizingMaskIntoConstraints="NO" id="Vfs-K1-vgK">
-                                <rect key="frame" x="20" y="94" width="335" height="150"/>
+                                <rect key="frame" x="20" y="70" width="984" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="hTL-OD-aRh"/>
@@ -101,7 +101,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52d-Gd-ChD">
-                                <rect key="frame" x="50" y="708" width="275" height="50"/>
+                                <rect key="frame" x="50" y="1296" width="924" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="GZ2-lo-LgP"/>
@@ -140,7 +140,7 @@
             <objects>
                 <collectionViewController id="N1e-pu-Mv9" customClass="TaskListController" customModule="TaskForce" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="Aed-pr-eXM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="152"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="152"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CNQ-qQ-1Tz">
@@ -232,11 +232,11 @@
             <objects>
                 <viewController storyboardIdentifier="TaskVC" id="LhM-xg-Ao7" customClass="TaskVC" customModule="TaskForce" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q8F-GN-Fyp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="diR-Hj-k1Y">
-                                <rect key="frame" x="0.0" y="238" width="375" height="540"/>
+                                <rect key="frame" x="0.0" y="826" width="1024" height="540"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="540" id="hiB-Yn-W5o"/>
                                 </constraints>
@@ -250,14 +250,14 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KYh-Cc-dVV">
-                                <rect key="frame" x="16" y="226" width="343" height="2"/>
+                                <rect key="frame" x="16" y="814" width="992" height="2"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.16862745100000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="Mhc-Ga-C0Z"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfu-Na-dX8">
-                                <rect key="frame" x="0.0" y="44" width="375" height="152"/>
+                                <rect key="frame" x="0.0" y="20" width="1024" height="152"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="152" id="Qs5-Ez-xXO"/>
                                 </constraints>
@@ -290,11 +290,11 @@
             <objects>
                 <viewController storyboardIdentifier="PopVC" id="MXi-CC-rH3" customClass="PopVC" customModule="TaskForce" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VXp-rD-uBe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JxB-Ta-9jE">
-                                <rect key="frame" x="20" y="182.33333333333337" width="335" height="290"/>
+                                <rect key="frame" x="20" y="158.5" width="984" height="290"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="290" id="oD2-hM-Jjm"/>
@@ -305,7 +305,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ebz-aa-k8M">
-                                <rect key="frame" x="0.0" y="708" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="1296" width="1024" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="XUi-oa-owh"/>
@@ -320,7 +320,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXq-fg-Tj8">
-                                <rect key="frame" x="20" y="94" width="335" height="38.333333333333343"/>
+                                <rect key="frame" x="20" y="70" width="984" height="38.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="28"/>
                                 <color key="textColor" red="0.0" green="0.058823529409999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

@@ -23,6 +23,14 @@ class TaskListController: UICollectionViewController {
         collectionViewFlowLayout.minimumLineSpacing = 0
     }
     
+//    func checkDevice() {
+//        if UIDevice.current.userInterfaceIdiom == .pad {
+//            
+//        } else {
+//            registerForPreviewing(with: self, sourceView: collectionView!)
+//        }
+//    }
+    
     override func viewWillAppear(_ animated: Bool) {
         fetchTasks()
         collectionView?.reloadData()
@@ -62,15 +70,12 @@ class TaskListController: UICollectionViewController {
     }
     
     override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        // Stop scrollView sliding:
         targetContentOffset.pointee = scrollView.contentOffset
         
-        // calculate where scrollView should snap to:
         let indexOfMajorCell = self.indexOfMajorCell()
         
-        // calculate conditions:
         let dataSourceCount = collectionView(collectionView!, numberOfItemsInSection: 0)
-        let swipeVelocityThreshold: CGFloat = 0.5 // after some trail and error
+        let swipeVelocityThreshold: CGFloat = 0.5
         let hasEnoughVelocityToSlideToTheNextCell = indexOfCellBeforeDragging + 1 < dataSourceCount && velocity.x > swipeVelocityThreshold
         let hasEnoughVelocityToSlideToThePreviousCell = indexOfCellBeforeDragging - 1 >= 0 && velocity.x < -swipeVelocityThreshold
         let majorCellIsTheCellBeforeDragging = indexOfMajorCell == indexOfCellBeforeDragging
@@ -81,14 +86,12 @@ class TaskListController: UICollectionViewController {
             let snapToIndex = indexOfCellBeforeDragging + (hasEnoughVelocityToSlideToTheNextCell ? 1 : -1)
             let toValue = collectionViewFlowLayout.itemSize.width * CGFloat(snapToIndex)
             
-            // Damping equal 1 => no oscillations => decay animation:
             UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: velocity.x, options: .allowUserInteraction, animations: {
                 scrollView.contentOffset = CGPoint(x: toValue, y: 0)
                 scrollView.layoutIfNeeded()
             }, completion: nil)
             
         } else {
-            // This is a much better to way to scroll to a cell:
             let indexPath = IndexPath(row: indexOfMajorCell, section: 0)
             collectionViewLayout.collectionView!.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         }
@@ -107,6 +110,18 @@ class TaskListController: UICollectionViewController {
         let task = tasks[indexPath.row]
         cell.configureCell(task: task)
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            guard let popVC = storyboard?.instantiateViewController(withIdentifier: "PopVC") as? PopVC else { return }
+            
+            let choosenTask = tasks[indexPath.row]
+            
+            popVC.initData(title: choosenTask.taskTitle!, note: choosenTask.taskNotes!, row: indexPath.row)
+            
+            presentDetail(popVC)
+        }
     }
     
     func fetch(completion: (_ complete: Bool) -> ()) {
